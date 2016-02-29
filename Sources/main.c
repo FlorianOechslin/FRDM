@@ -30,11 +30,22 @@
 /* Including needed modules to compile this module/procedure */
 #include "Cpu.h"
 #include "Events.h"
+#include "LED1.h"
+#include "LEDpin1.h"
+#include "BitIoLdd1.h"
+#include "WAIT1.h"
+#include "LED2.h"
+#include "LEDpin2.h"
+#include "BitIoLdd2.h"
+#include "LED3.h"
+#include "LEDpin3.h"
+#include "BitIoLdd3.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
+#define time 1500
 /* User includes (#include below this line is not maintained by Processor Expert) */
 
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
@@ -48,7 +59,36 @@ int main(void)
   /*** End of Processor Expert internal initialization.                    ***/
 
   /* Write your code here */
-  /* For example: for(;;) { } */
+  LED1_Off();
+  LED2_Off();
+
+ for(;;) {
+
+LED1_On();//rot
+WAIT1_Waitms(time);
+LED1_Off();
+LED2_On();//grün
+WAIT1_Waitms(time);
+LED2_Off();
+LED3_On();//blau
+WAIT1_Waitms(time);
+LED3_Off();
+LED1_On();
+LED2_On(); //rot+grün= gelb
+WAIT1_Waitms(time);
+LED1_Off();
+LED3_On(); //grün+blau= cyan
+WAIT1_Waitms(time);
+LED2_Off();
+LED1_On();//rot+blau= magenta
+WAIT1_Waitms(time);
+LED2_On();//rot+grün+blau= weiss
+WAIT1_Waitms(time);
+LED1_Off();
+LED2_Off();
+LED3_Off();
+
+ }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
