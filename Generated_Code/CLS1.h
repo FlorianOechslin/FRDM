@@ -7,12 +7,12 @@
 **     Version     : Component 01.079, Driver 01.00, CPU db: 3.00.000
 **     Repository  : My Components
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2016-05-09, 11:02, # CodeGen: 14
+**     Date/Time   : 2016-05-17, 09:45, # CodeGen: 13
 **     Abstract    :
 **
 **     Settings    :
 **          Component name                                 : CLS1
-**          Echo                                           : no
+**          Echo                                           : yes
 **          Prompt                                         : "CMD> "
 **          Project Name                                   : FRDM-KL25Z Master INTRO
 **          Silent Mode Prefix                             : #
@@ -155,7 +155,7 @@
 #define CLS1_MULTI_CMD_CHAR      ';' /* separation character */
 
 /* settings for local echo */
-#define CLS1_ECHO_ENABLED  0           /* 1: enabled, 0: disabled */
+#define CLS1_ECHO_ENABLED  1           /* 1: enabled, 0: disabled */
 
 #define CLS1_DEFAULT_SERIAL  1 /* If set to 1, then the shell implements its own StdIO which is returned by CLS1_GetStdio(); */
 
